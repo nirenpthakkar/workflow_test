@@ -6,12 +6,14 @@ on: [push]
 env: 
   owner_name: Niren
   my_repo_var_value: ${{ vars.MY_REPO_VAR }}
+  my_secret_var_value: ${{ secrets.MY_SECRET }}
   
 jobs:
   use_env_var:
     runs-on: ubuntu-latest
     steps:
       - run: echo "Job use_env_var is executing as part of new workflow - from $owner_name - with repo var value as $my_repo_var_value"
+      - run: echo "My Secret data -> $my_secret_var_value"
 
 
         
